@@ -7,9 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B40C064513A5055C00EFB9C6 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B40C064413A5055C00EFB9C6 /* main.cpp */; };
 		B40C064713A5055C00EFB9C6 /* snescom.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = B40C064613A5055C00EFB9C6 /* snescom.1 */; };
+		B451CBB013A554B2009C9740 /* assemble.cc in Sources */ = {isa = PBXBuildFile; fileRef = B451CB9F13A554B2009C9740 /* assemble.cc */; };
+		B451CBB113A554B2009C9740 /* dataarea.cc in Sources */ = {isa = PBXBuildFile; fileRef = B451CBA013A554B2009C9740 /* dataarea.cc */; };
+		B451CBB313A554B2009C9740 /* expr.cc in Sources */ = {isa = PBXBuildFile; fileRef = B451CBA213A554B2009C9740 /* expr.cc */; };
+		B451CBB413A554B2009C9740 /* insdata.cc in Sources */ = {isa = PBXBuildFile; fileRef = B451CBA313A554B2009C9740 /* insdata.cc */; };
+		B451CBB713A554B2009C9740 /* main.cc in Sources */ = {isa = PBXBuildFile; fileRef = B451CBA613A554B2009C9740 /* main.cc */; };
+		B451CBB813A554B2009C9740 /* o65.cc in Sources */ = {isa = PBXBuildFile; fileRef = B451CBA713A554B2009C9740 /* o65.cc */; };
+		B451CBBA13A554B2009C9740 /* object.cc in Sources */ = {isa = PBXBuildFile; fileRef = B451CBA913A554B2009C9740 /* object.cc */; };
+		B451CBBB13A554B2009C9740 /* parse.cc in Sources */ = {isa = PBXBuildFile; fileRef = B451CBAA13A554B2009C9740 /* parse.cc */; };
+		B451CBBC13A554B2009C9740 /* precompile.cc in Sources */ = {isa = PBXBuildFile; fileRef = B451CBAB13A554B2009C9740 /* precompile.cc */; };
+		B451CBBD13A554B2009C9740 /* refer.cc in Sources */ = {isa = PBXBuildFile; fileRef = B451CBAC13A554B2009C9740 /* refer.cc */; };
+		B451CBBE13A554B2009C9740 /* romaddr.cc in Sources */ = {isa = PBXBuildFile; fileRef = B451CBAD13A554B2009C9740 /* romaddr.cc */; };
+		B451CBC013A554B2009C9740 /* warning.cc in Sources */ = {isa = PBXBuildFile; fileRef = B451CBAF13A554B2009C9740 /* warning.cc */; };
+		B451CBD313A556A8009C9740 /* disasm.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = B451CBD213A556A8009C9740 /* disasm.1 */; };
+		B451CBE113A556AD009C9740 /* sneslink.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = B451CBE013A556AD009C9740 /* sneslink.1 */; };
+		B451CBE513A55740009C9740 /* dataarea.cc in Sources */ = {isa = PBXBuildFile; fileRef = B451CBA013A554B2009C9740 /* dataarea.cc */; };
+		B451CBE613A55740009C9740 /* link.cc in Sources */ = {isa = PBXBuildFile; fileRef = B451CBA513A554B2009C9740 /* link.cc */; };
+		B451CBE713A55740009C9740 /* o65.cc in Sources */ = {isa = PBXBuildFile; fileRef = B451CBA713A554B2009C9740 /* o65.cc */; };
+		B451CBE813A55740009C9740 /* o65linker.cc in Sources */ = {isa = PBXBuildFile; fileRef = B451CBA813A554B2009C9740 /* o65linker.cc */; };
+		B451CBE913A55740009C9740 /* object.cc in Sources */ = {isa = PBXBuildFile; fileRef = B451CBA913A554B2009C9740 /* object.cc */; };
+		B451CBEA13A55740009C9740 /* refer.cc in Sources */ = {isa = PBXBuildFile; fileRef = B451CBAC13A554B2009C9740 /* refer.cc */; };
+		B451CBEB13A55740009C9740 /* romaddr.cc in Sources */ = {isa = PBXBuildFile; fileRef = B451CBAD13A554B2009C9740 /* romaddr.cc */; };
+		B451CBEC13A55740009C9740 /* space.cc in Sources */ = {isa = PBXBuildFile; fileRef = B451CBAE13A554B2009C9740 /* space.cc */; };
+		B451CBED13A55740009C9740 /* warning.cc in Sources */ = {isa = PBXBuildFile; fileRef = B451CBAF13A554B2009C9740 /* warning.cc */; };
+		B451CBEF13A5577B009C9740 /* disasm.cc in Sources */ = {isa = PBXBuildFile; fileRef = B451CBA113A554B2009C9740 /* disasm.cc */; };
+		B451CBF013A5577B009C9740 /* o65.cc in Sources */ = {isa = PBXBuildFile; fileRef = B451CBA713A554B2009C9740 /* o65.cc */; };
+		B451CBF113A5577B009C9740 /* romaddr.cc in Sources */ = {isa = PBXBuildFile; fileRef = B451CBAD13A554B2009C9740 /* romaddr.cc */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B451CBF213A55796009C9740 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B40C063713A5055B00EFB9C6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B451CBCC13A556A8009C9740;
+			remoteInfo = disasm;
+		};
+		B451CBF413A55797009C9740 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B40C063713A5055B00EFB9C6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B451CBDA13A556AD009C9740;
+			remoteInfo = sneslink;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		B40C063E13A5055B00EFB9C6 /* CopyFiles */ = {
@@ -22,16 +64,95 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		B451CBCB13A556A8009C9740 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				B451CBD313A556A8009C9740 /* disasm.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		B451CBD913A556AD009C9740 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				B451CBE113A556AD009C9740 /* sneslink.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B40C064013A5055B00EFB9C6 /* snescom */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = snescom; sourceTree = BUILT_PRODUCTS_DIR; };
-		B40C064413A5055C00EFB9C6 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B40C064613A5055C00EFB9C6 /* snescom.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = snescom.1; sourceTree = "<group>"; };
+		B451CB8A13A554B2009C9740 /* assemble.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = assemble.hh; sourceTree = "<group>"; };
+		B451CB8B13A554B2009C9740 /* binpacker.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = binpacker.hh; sourceTree = "<group>"; };
+		B451CB8C13A554B2009C9740 /* dataarea.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = dataarea.hh; sourceTree = "<group>"; };
+		B451CB8D13A554B2009C9740 /* expr.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = expr.hh; sourceTree = "<group>"; };
+		B451CB8E13A554B2009C9740 /* hash.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = hash.hh; sourceTree = "<group>"; };
+		B451CB8F13A554B2009C9740 /* insdata.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = insdata.hh; sourceTree = "<group>"; };
+		B451CB9013A554B2009C9740 /* logfiles.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = logfiles.hh; sourceTree = "<group>"; };
+		B451CB9113A554B2009C9740 /* miscfun.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = miscfun.hh; sourceTree = "<group>"; };
+		B451CB9213A554B2009C9740 /* msginsert.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = msginsert.hh; sourceTree = "<group>"; };
+		B451CB9313A554B2009C9740 /* o65.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = o65.hh; sourceTree = "<group>"; };
+		B451CB9413A554B2009C9740 /* o65linker.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = o65linker.hh; sourceTree = "<group>"; };
+		B451CB9513A554B2009C9740 /* object.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = object.hh; sourceTree = "<group>"; };
+		B451CB9613A554B2009C9740 /* parse.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = parse.hh; sourceTree = "<group>"; };
+		B451CB9713A554B2009C9740 /* precompile.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = precompile.hh; sourceTree = "<group>"; };
+		B451CB9813A554B2009C9740 /* range.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = range.hh; sourceTree = "<group>"; };
+		B451CB9913A554B2009C9740 /* rangeset.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rangeset.hh; sourceTree = "<group>"; };
+		B451CB9A13A554B2009C9740 /* refer.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = refer.hh; sourceTree = "<group>"; };
+		B451CB9B13A554B2009C9740 /* relocdata.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = relocdata.hh; sourceTree = "<group>"; };
+		B451CB9C13A554B2009C9740 /* romaddr.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = romaddr.hh; sourceTree = "<group>"; };
+		B451CB9D13A554B2009C9740 /* space.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = space.hh; sourceTree = "<group>"; };
+		B451CB9E13A554B2009C9740 /* warning.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = warning.hh; sourceTree = "<group>"; };
+		B451CB9F13A554B2009C9740 /* assemble.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = assemble.cc; sourceTree = "<group>"; };
+		B451CBA013A554B2009C9740 /* dataarea.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dataarea.cc; sourceTree = "<group>"; };
+		B451CBA113A554B2009C9740 /* disasm.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = disasm.cc; sourceTree = "<group>"; };
+		B451CBA213A554B2009C9740 /* expr.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = expr.cc; sourceTree = "<group>"; };
+		B451CBA313A554B2009C9740 /* insdata.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = insdata.cc; sourceTree = "<group>"; };
+		B451CBA413A554B2009C9740 /* insgen.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = insgen.cc; sourceTree = "<group>"; };
+		B451CBA513A554B2009C9740 /* link.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = link.cc; sourceTree = "<group>"; };
+		B451CBA613A554B2009C9740 /* main.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cc; sourceTree = "<group>"; };
+		B451CBA713A554B2009C9740 /* o65.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = o65.cc; sourceTree = "<group>"; };
+		B451CBA813A554B2009C9740 /* o65linker.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = o65linker.cc; sourceTree = "<group>"; };
+		B451CBA913A554B2009C9740 /* object.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = object.cc; sourceTree = "<group>"; };
+		B451CBAA13A554B2009C9740 /* parse.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = parse.cc; sourceTree = "<group>"; };
+		B451CBAB13A554B2009C9740 /* precompile.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = precompile.cc; sourceTree = "<group>"; };
+		B451CBAC13A554B2009C9740 /* refer.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = refer.cc; sourceTree = "<group>"; };
+		B451CBAD13A554B2009C9740 /* romaddr.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = romaddr.cc; sourceTree = "<group>"; };
+		B451CBAE13A554B2009C9740 /* space.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = space.cc; sourceTree = "<group>"; };
+		B451CBAF13A554B2009C9740 /* warning.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = warning.cc; sourceTree = "<group>"; };
+		B451CBC213A554CA009C9740 /* binpacker.tcc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = binpacker.tcc; sourceTree = "<group>"; };
+		B451CBC313A554CA009C9740 /* miscfun.tcc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = miscfun.tcc; sourceTree = "<group>"; };
+		B451CBC413A554CA009C9740 /* rangeset.tcc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rangeset.tcc; sourceTree = "<group>"; };
+		B451CBC813A554D8009C9740 /* tristate */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tristate; sourceTree = "<group>"; };
+		B451CBCD13A556A8009C9740 /* disasm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = disasm; sourceTree = BUILT_PRODUCTS_DIR; };
+		B451CBD213A556A8009C9740 /* disasm.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = disasm.1; sourceTree = "<group>"; };
+		B451CBDB13A556AD009C9740 /* sneslink */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = sneslink; sourceTree = BUILT_PRODUCTS_DIR; };
+		B451CBE013A556AD009C9740 /* sneslink.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = sneslink.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B40C063D13A5055B00EFB9C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B451CBCA13A556A8009C9740 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B451CBD813A556AD009C9740 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -45,6 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				B40C064313A5055C00EFB9C6 /* snescom */,
+				B451CBCF13A556A8009C9740 /* disasm */,
+				B451CBDD13A556AD009C9740 /* sneslink */,
 				B40C064113A5055B00EFB9C6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +176,8 @@
 			isa = PBXGroup;
 			children = (
 				B40C064013A5055B00EFB9C6 /* snescom */,
+				B451CBCD13A556A8009C9740 /* disasm */,
+				B451CBDB13A556AD009C9740 /* sneslink */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,10 +185,67 @@
 		B40C064313A5055C00EFB9C6 /* snescom */ = {
 			isa = PBXGroup;
 			children = (
-				B40C064413A5055C00EFB9C6 /* main.cpp */,
+				B451CBC813A554D8009C9740 /* tristate */,
+				B451CBC213A554CA009C9740 /* binpacker.tcc */,
+				B451CBC313A554CA009C9740 /* miscfun.tcc */,
+				B451CBC413A554CA009C9740 /* rangeset.tcc */,
+				B451CB8A13A554B2009C9740 /* assemble.hh */,
+				B451CB8B13A554B2009C9740 /* binpacker.hh */,
+				B451CB8C13A554B2009C9740 /* dataarea.hh */,
+				B451CB8D13A554B2009C9740 /* expr.hh */,
+				B451CB8E13A554B2009C9740 /* hash.hh */,
+				B451CB8F13A554B2009C9740 /* insdata.hh */,
+				B451CB9013A554B2009C9740 /* logfiles.hh */,
+				B451CB9113A554B2009C9740 /* miscfun.hh */,
+				B451CB9213A554B2009C9740 /* msginsert.hh */,
+				B451CB9313A554B2009C9740 /* o65.hh */,
+				B451CB9413A554B2009C9740 /* o65linker.hh */,
+				B451CB9513A554B2009C9740 /* object.hh */,
+				B451CB9613A554B2009C9740 /* parse.hh */,
+				B451CB9713A554B2009C9740 /* precompile.hh */,
+				B451CB9813A554B2009C9740 /* range.hh */,
+				B451CB9913A554B2009C9740 /* rangeset.hh */,
+				B451CB9A13A554B2009C9740 /* refer.hh */,
+				B451CB9B13A554B2009C9740 /* relocdata.hh */,
+				B451CB9C13A554B2009C9740 /* romaddr.hh */,
+				B451CB9D13A554B2009C9740 /* space.hh */,
+				B451CB9E13A554B2009C9740 /* warning.hh */,
+				B451CB9F13A554B2009C9740 /* assemble.cc */,
+				B451CBA013A554B2009C9740 /* dataarea.cc */,
+				B451CBA113A554B2009C9740 /* disasm.cc */,
+				B451CBA213A554B2009C9740 /* expr.cc */,
+				B451CBA313A554B2009C9740 /* insdata.cc */,
+				B451CBA413A554B2009C9740 /* insgen.cc */,
+				B451CBA513A554B2009C9740 /* link.cc */,
+				B451CBA613A554B2009C9740 /* main.cc */,
+				B451CBA713A554B2009C9740 /* o65.cc */,
+				B451CBA813A554B2009C9740 /* o65linker.cc */,
+				B451CBA913A554B2009C9740 /* object.cc */,
+				B451CBAA13A554B2009C9740 /* parse.cc */,
+				B451CBAB13A554B2009C9740 /* precompile.cc */,
+				B451CBAC13A554B2009C9740 /* refer.cc */,
+				B451CBAD13A554B2009C9740 /* romaddr.cc */,
+				B451CBAE13A554B2009C9740 /* space.cc */,
+				B451CBAF13A554B2009C9740 /* warning.cc */,
 				B40C064613A5055C00EFB9C6 /* snescom.1 */,
 			);
 			path = snescom;
+			sourceTree = "<group>";
+		};
+		B451CBCF13A556A8009C9740 /* disasm */ = {
+			isa = PBXGroup;
+			children = (
+				B451CBD213A556A8009C9740 /* disasm.1 */,
+			);
+			path = disasm;
+			sourceTree = "<group>";
+		};
+		B451CBDD13A556AD009C9740 /* sneslink */ = {
+			isa = PBXGroup;
+			children = (
+				B451CBE013A556AD009C9740 /* sneslink.1 */,
+			);
+			path = sneslink;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,10 +262,46 @@
 			buildRules = (
 			);
 			dependencies = (
+				B451CBF313A55796009C9740 /* PBXTargetDependency */,
+				B451CBF513A55797009C9740 /* PBXTargetDependency */,
 			);
 			name = snescom;
 			productName = snescom;
 			productReference = B40C064013A5055B00EFB9C6 /* snescom */;
+			productType = "com.apple.product-type.tool";
+		};
+		B451CBCC13A556A8009C9740 /* disasm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B451CBD413A556A8009C9740 /* Build configuration list for PBXNativeTarget "disasm" */;
+			buildPhases = (
+				B451CBC913A556A8009C9740 /* Sources */,
+				B451CBCA13A556A8009C9740 /* Frameworks */,
+				B451CBCB13A556A8009C9740 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = disasm;
+			productName = disasm;
+			productReference = B451CBCD13A556A8009C9740 /* disasm */;
+			productType = "com.apple.product-type.tool";
+		};
+		B451CBDA13A556AD009C9740 /* sneslink */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B451CBE213A556AD009C9740 /* Build configuration list for PBXNativeTarget "sneslink" */;
+			buildPhases = (
+				B451CBD713A556AD009C9740 /* Sources */,
+				B451CBD813A556AD009C9740 /* Frameworks */,
+				B451CBD913A556AD009C9740 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = sneslink;
+			productName = sneslink;
+			productReference = B451CBDB13A556AD009C9740 /* sneslink */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -104,6 +322,8 @@
 			projectRoot = "";
 			targets = (
 				B40C063F13A5055B00EFB9C6 /* snescom */,
+				B451CBCC13A556A8009C9740 /* disasm */,
+				B451CBDA13A556AD009C9740 /* sneslink */,
 			);
 		};
 /* End PBXProject section */
@@ -113,11 +333,61 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B40C064513A5055C00EFB9C6 /* main.cpp in Sources */,
+				B451CBB013A554B2009C9740 /* assemble.cc in Sources */,
+				B451CBB113A554B2009C9740 /* dataarea.cc in Sources */,
+				B451CBB313A554B2009C9740 /* expr.cc in Sources */,
+				B451CBB413A554B2009C9740 /* insdata.cc in Sources */,
+				B451CBB713A554B2009C9740 /* main.cc in Sources */,
+				B451CBB813A554B2009C9740 /* o65.cc in Sources */,
+				B451CBBA13A554B2009C9740 /* object.cc in Sources */,
+				B451CBBB13A554B2009C9740 /* parse.cc in Sources */,
+				B451CBBC13A554B2009C9740 /* precompile.cc in Sources */,
+				B451CBBD13A554B2009C9740 /* refer.cc in Sources */,
+				B451CBBE13A554B2009C9740 /* romaddr.cc in Sources */,
+				B451CBC013A554B2009C9740 /* warning.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B451CBC913A556A8009C9740 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B451CBEF13A5577B009C9740 /* disasm.cc in Sources */,
+				B451CBF013A5577B009C9740 /* o65.cc in Sources */,
+				B451CBF113A5577B009C9740 /* romaddr.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B451CBD713A556AD009C9740 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B451CBE713A55740009C9740 /* o65.cc in Sources */,
+				B451CBEB13A55740009C9740 /* romaddr.cc in Sources */,
+				B451CBE513A55740009C9740 /* dataarea.cc in Sources */,
+				B451CBE613A55740009C9740 /* link.cc in Sources */,
+				B451CBE813A55740009C9740 /* o65linker.cc in Sources */,
+				B451CBE913A55740009C9740 /* object.cc in Sources */,
+				B451CBEA13A55740009C9740 /* refer.cc in Sources */,
+				B451CBEC13A55740009C9740 /* space.cc in Sources */,
+				B451CBED13A55740009C9740 /* warning.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B451CBF313A55796009C9740 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B451CBCC13A556A8009C9740 /* disasm */;
+			targetProxy = B451CBF213A55796009C9740 /* PBXContainerItemProxy */;
+		};
+		B451CBF513A55797009C9740 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B451CBDA13A556AD009C9740 /* sneslink */;
+			targetProxy = B451CBF413A55797009C9740 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B40C064813A5055C00EFB9C6 /* Debug */ = {
@@ -142,6 +412,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_CPLUSPLUSFLAGS[arch=*]" = "-DVERSION=\\\"1.7.2.1\\\"";
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -168,11 +439,42 @@
 		B40C064B13A5055C00EFB9C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"HEADER_SEARCH_PATHS[arch=*]" = /sw/include;
+				"LIBRARY_SEARCH_PATHS[arch=*]" = /sw/lib;
+				"OTHER_CPLUSPLUSFLAGS[arch=*]" = "-DVERSION=\\\"1.7.2.1\\\"";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		B40C064C13A5055C00EFB9C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B451CBD513A556A8009C9740 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B451CBD613A556A8009C9740 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B451CBE313A556AD009C9740 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B451CBE413A556AD009C9740 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -196,6 +498,23 @@
 			buildConfigurations = (
 				B40C064B13A5055C00EFB9C6 /* Debug */,
 				B40C064C13A5055C00EFB9C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B451CBD413A556A8009C9740 /* Build configuration list for PBXNativeTarget "disasm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B451CBD513A556A8009C9740 /* Debug */,
+				B451CBD613A556A8009C9740 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B451CBE213A556AD009C9740 /* Build configuration list for PBXNativeTarget "sneslink" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B451CBE313A556AD009C9740 /* Debug */,
+				B451CBE413A556AD009C9740 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
