@@ -36,23 +36,6 @@
 		B451CBF113A5577B009C9740 /* romaddr.cc in Sources */ = {isa = PBXBuildFile; fileRef = B451CBAD13A554B2009C9740 /* romaddr.cc */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		B451CBF213A55796009C9740 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B40C063713A5055B00EFB9C6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B451CBCC13A556A8009C9740;
-			remoteInfo = disasm;
-		};
-		B451CBF413A55797009C9740 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B40C063713A5055B00EFB9C6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B451CBDA13A556AD009C9740;
-			remoteInfo = sneslink;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		B40C063E13A5055B00EFB9C6 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -262,8 +245,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				B451CBF313A55796009C9740 /* PBXTargetDependency */,
-				B451CBF513A55797009C9740 /* PBXTargetDependency */,
 			);
 			name = snescom;
 			productName = snescom;
@@ -375,19 +356,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B451CBF313A55796009C9740 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B451CBCC13A556A8009C9740 /* disasm */;
-			targetProxy = B451CBF213A55796009C9740 /* PBXContainerItemProxy */;
-		};
-		B451CBF513A55797009C9740 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B451CBDA13A556AD009C9740 /* sneslink */;
-			targetProxy = B451CBF413A55797009C9740 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B40C064813A5055C00EFB9C6 /* Debug */ = {
