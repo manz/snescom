@@ -39,10 +39,7 @@ int main(int argc, char**argv)
     
     std::FILE *output = NULL;
     std::string outfn;
-
-    printf("%08X\n", SNES2ROMaddr(0x008000));
-    
-    
+ 
     for(;;)
     {
         int option_index = 0;
