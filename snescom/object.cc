@@ -289,7 +289,7 @@ void Object::Segment::DefineLabel(unsigned level, const std::string& name, unsig
 
 void Object::Segment::DefineLabel(unsigned level, const std::string& name)
 {
-    DefineLabel(level, name, GetPos());
+    DefineLabel(level, name, ROM2SNESaddr(GetPos(), address_type));
 }
 
 void Object::Segment::UndefineLabel(const std::string& label)
@@ -718,7 +718,7 @@ void Object::AddExtern(char prefix, const std::string& ref, long value)
 
 void Object::DefineLabel(const std::string& label)
 {
-    DefineLabel(label, GetPos());
+    DefineLabel(label, ROM2SNESaddr(GetPos(), address_type));
 }
 
 unsigned Object::GetPos() const

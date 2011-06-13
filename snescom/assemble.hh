@@ -29,7 +29,7 @@ namespace
         prio_bitnot = 8  // ~
     };
 }
-
+extern int address_type;
 extern bool A_16bit;
 extern bool X_16bit;
 

@@ -15,6 +15,8 @@
 bool A_16bit = true;
 bool X_16bit = true;
 
+int address_type = 3;
+
 static std::map<unsigned, std::string> PrevBranchLabel; // What "-" means (for each length of "-")
 static std::map<unsigned, std::string> NextBranchLabel; // What "+" means (for each length of "+")
 
@@ -276,7 +278,16 @@ GotLabel:
         {
             /* Other mnemonic */
             
-            if(tok == ".byt")
+            if (tok == ".lowrom") {
+                address_type = 1;
+            }
+            else if (tok == ".lowrom2") {
+                address_type = 2;
+            }
+            else if (tok == ".highrom") {
+                address_type = 3;
+            }
+            else if(tok == ".byt")
             {
                 OpcodeChoice choice;
                 bool first=true, ok=true;
@@ -416,7 +427,7 @@ GotLabel:
                     
                     if(tok == "*")
                     {
-                        result.SetPos(value);
+                        result.SetPos(SNES2ROMaddr(value));
                     }
                     else
                     {

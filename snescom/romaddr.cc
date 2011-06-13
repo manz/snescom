@@ -28,17 +28,55 @@ static unsigned long SNES2ROMaddr_(unsigned long addr)
     return (addr & 0xFFFF) | (SNES2ROMpage(addr >> 16) << 16);
 }
 
+unsigned long ROM2SNESaddr(unsigned long addr, int mode) {
+    unsigned long retval = 0;
+    
+    if (mode == 1) {
+        unsigned long bank_count = addr / 0x8000;
+        unsigned long remainder = (addr % 0x8000) + 0x8000;
+        retval = bank_count << 16 | remainder;
+    }
+    else if (mode == 2) {
+        unsigned long bank_count = addr / 0x8000;
+        bank_count += 0x80;
+        
+        unsigned long remainder = (addr % 0x8000) + 0x8000;
+        retval = bank_count << 16 | remainder;
+    }
+    else if (mode == 3) {
+        retval = addr + 0xC00000;
+    }
+    
+    return retval;
+}
+
 unsigned long ROM2SNESaddr(unsigned long addr)
 {
     unsigned long ret = ROM2SNESaddr_(addr);
+    
+    
     //printf("ROM %X -> SNES %X\n", addr, ret);
     return ret;
 }
 
 unsigned long SNES2ROMaddr(unsigned long addr)
 {
-    unsigned long ret = SNES2ROMaddr_(addr);
-    //printf("SNES %X -> ROM %X\n", addr, ret);
+    unsigned long ret = 0;// SNES2ROMaddr_(addr);
+    
+    if (addr >= 0xC00000) {
+        ret = addr - 0xC00000;
+    }
+    else if (addr >= 0x808000) {
+        int bank = addr >> 16;
+        bank -= 0x80;
+        ret = bank * 0x8000 + (addr & 0x7FFF);
+    }
+    else {
+        int bank = addr >> 16;
+        ret = bank * 0x8000 + (addr & 0x7FFF);
+    }
+    
+    printf("SNES %X -> ROM %X\n", addr, ret);
     return ret;
 }
 
