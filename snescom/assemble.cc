@@ -287,6 +287,11 @@ GotLabel:
             else if (tok == ".highrom") {
                 address_type = 3;
             }
+            else if (tok == ".incbin") {
+                // TODO: read filename & open !
+                fprintf(stderr, "(EE) %s\n", "incbin not supported yet");
+               
+            }
             else if(tok == ".byt")
             {
                 OpcodeChoice choice;

@@ -574,7 +574,7 @@ void Object::Segment::CloseSegment()
             }
             case FORCE_REL8:
             {
-                const long diff = value - (long)address - 1;
+                const long diff = (long)SNES2ROMaddr(value) - address - 1;
                 
                 int threshold = 0;
                 extern bool already_reprocessed; /* Ugly hack */
@@ -607,7 +607,7 @@ void Object::Segment::CloseSegment()
             }
             case FORCE_REL16:
             {
-                const long diff = value - (long)address - 2;
+                const long diff = value - (long)ROM2SNESaddr(address, address_type) - 2;
                 
                 if(diff < -0x8000 || diff >= 0x8000)
                 {
@@ -1103,6 +1103,7 @@ namespace
         std::list<std::pair<unsigned, std::string> > patches;
         
         // Put labels (this is DarkForce's extension)
+        /*
         for(LabelMap::const_iterator i = labels.begin(); i != labels.end(); ++i)
         {
             for(Object::Segment::LabelList::const_iterator
@@ -1113,6 +1114,7 @@ namespace
                 patches.push_back(BuildGlobalPatch(j->first, (j->second)));
             }
         }
+         */
         
         /* Ignore fixups. IPS is not meant to be relocated... */
         /* It's safe to ignore them silently. */

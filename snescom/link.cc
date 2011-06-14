@@ -14,7 +14,7 @@ using namespace std;
 
 bool already_reprocessed = true; /* required by object.cc, not really used */
 bool assembly_errors = false;
-
+int address_type = 3; /* Set Highrom by default */
 unsigned RomSize = 0;
 
 namespace
