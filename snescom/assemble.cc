@@ -16,7 +16,7 @@ bool A_16bit = true;
 bool X_16bit = true;
 
 int address_type = 3;
-
+int current_line = 0;
 static std::map<unsigned, std::string> PrevBranchLabel; // What "-" means (for each length of "-")
 static std::map<unsigned, std::string> NextBranchLabel; // What "+" means (for each length of "+")
 
@@ -88,7 +88,7 @@ namespace
                     parameters[a].first,
                     parameters[a].second.Dump().c_str());
             }
-            std::fprintf(stderr, "\n");
+            std::fprintf(stderr, "%d\n", current_line);
             return;
         }
         
@@ -173,14 +173,14 @@ namespace
             {
                 expression* e = p.exp.get();
                 SubstituteExprLabel(e, label, value, false);
-                boost::shared_ptr<expression> tmp(e);
+                std::tr1::shared_ptr<expression> tmp(e);
                 p.exp.swap(tmp);
             }
             else
             {
                 fprintf(stderr,
-                    "Error: Undefined label \"%s\" in expression - got \"%s\"\n",
-                    label.c_str(), p.Dump().c_str());
+                    "Error: Undefined label \"%s\" in expression - got \"%s\" (%d)\n",
+                    label.c_str(), p.Dump().c_str(), current_line);
             }
         }
         
@@ -189,8 +189,8 @@ namespace
         else
         {
             fprintf(stderr,
-                "Error: Expression must be const - got \"%s\"\n",
-                p.Dump().c_str());
+                "Error: Expression must be const - got \"%s\" (%d)\n",
+                p.Dump().c_str(), current_line);
         }
         
         return value;
@@ -363,8 +363,8 @@ GotLabel:
                     || p.is_word().is_false())
                     {
                         /* FIXME: syntax error */
-                        std::fprintf(stderr, "Syntax error at '%s'\n",
-                            data.GetRest().c_str());
+                        std::fprintf(stderr, "Syntax error at '%s' on line %d\n",
+                            data.GetRest().c_str(), current_line);
                         ok = false;
                         break;
                     }
@@ -454,9 +454,9 @@ GotLabel:
             else if(!data.EOF())
             {
                 std::fprintf(stderr,
-                    "Error: What is '%s' - previous token: '%s'?\n",
+                    "Error: What is '%s' - previous token: '%s'? (%d)\n",
                         data.GetRest().c_str(),
-                        tok.c_str());
+                        tok.c_str(), current_line);
             }
         }
         else
@@ -528,7 +528,7 @@ GotLabel:
                                         choice.parameters.push_back(std::make_pair(1, 0x82)); // BRL
                                         
                                         expression* e = new expr_label(NopLabel);
-                                        boost::shared_ptr<expression> tmp(e);    
+                                        std::tr1::shared_ptr<expression> tmp(e);    
                                         
                                         p1.prefix = FORCE_REL16;
                                         p1.exp.swap(tmp);
@@ -545,7 +545,7 @@ GotLabel:
                                         choice.parameters.push_back(std::make_pair(1, 0x80)); // BRA
                                         
                                         expression* e = new expr_label(NopLabel);
-                                        boost::shared_ptr<expression> tmp(e);    
+                                        std::tr1::shared_ptr<expression> tmp(e);    
                                         
                                         p1.prefix = FORCE_REL8;
                                         p1.exp.swap(tmp);
@@ -609,10 +609,11 @@ GotLabel:
             if(!something_ok)
             {
                 std::fprintf(stderr,
-                    "Error: '%s' is invalid parameter for '%s' in current context (%u choices).\n",
+                    "Error: '%s' is invalid parameter for '%s' in current context (%u choices). (%d)\n",
                         data.GetRest().c_str(),
                         tok.c_str(),
-                        choices.size());
+                        choices.size(),
+                        current_line);
                 return;
             }
         }
@@ -768,7 +769,7 @@ GotLabel:
             }
             else if(prefix == FORCE_REL8 || prefix == FORCE_REL16)
             {
-                std::fprintf(stderr, "Error: Relative target must not be a constant\n");
+                std::fprintf(stderr, "Error: Relative target must not be a constant (%d)\n", current_line);
                 // FIXME: It isn't so bad...
             }
 
@@ -874,6 +875,7 @@ void AssemblePrecompiled(std::FILE *fp, Object& obj)
             continue;
         }
         ParseLine(obj, Buf);
+        current_line++;
     }
 
     obj.EndScope();

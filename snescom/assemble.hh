@@ -30,6 +30,7 @@ namespace
     };
 }
 extern int address_type;
+extern int current_line;
 extern bool A_16bit;
 extern bool X_16bit;
 

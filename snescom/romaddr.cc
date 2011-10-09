@@ -18,29 +18,29 @@ unsigned char SNES2ROMpage(unsigned char page)
     return (page & 0x3F) + 0x40;
 }
 
-static unsigned long ROM2SNESaddr_(unsigned long addr)
+static unsigned long ROM2SNESaddr_(unsigned int addr)
 {
     return (addr & 0xFFFF) | (ROM2SNESpage(addr >> 16) << 16);
 }
 
-static unsigned long SNES2ROMaddr_(unsigned long addr)
+static unsigned long SNES2ROMaddr_(unsigned int addr)
 {
     return (addr & 0xFFFF) | (SNES2ROMpage(addr >> 16) << 16);
 }
 
-unsigned long ROM2SNESaddr(unsigned long addr, int mode) {
-    unsigned long retval = 0;
+unsigned int ROM2SNESaddr(unsigned int addr, int mode) {
+    unsigned int retval = 0;
     
     if (mode == 1) {
-        unsigned long bank_count = addr / 0x8000;
-        unsigned long remainder = (addr % 0x8000) + 0x8000;
+        unsigned int bank_count = addr / 0x8000;
+        unsigned int remainder = (addr % 0x8000) + 0x8000;
         retval = bank_count << 16 | remainder;
     }
     else if (mode == 2) {
-        unsigned long bank_count = addr / 0x8000;
+        unsigned int bank_count = addr / 0x8000;
         bank_count += 0x80;
         
-        unsigned long remainder = (addr % 0x8000) + 0x8000;
+        unsigned int remainder = (addr % 0x8000) + 0x8000;
         retval = bank_count << 16 | remainder;
     }
     else if (mode == 3) {
@@ -50,7 +50,7 @@ unsigned long ROM2SNESaddr(unsigned long addr, int mode) {
     return retval;
 }
 
-unsigned long ROM2SNESaddr(unsigned long addr)
+unsigned int ROM2SNESaddr(unsigned int addr)
 {
     unsigned long ret = ROM2SNESaddr_(addr);
     
@@ -59,7 +59,7 @@ unsigned long ROM2SNESaddr(unsigned long addr)
     return ret;
 }
 
-unsigned long SNES2ROMaddr(unsigned long addr)
+unsigned int SNES2ROMaddr(unsigned int addr)
 {
     unsigned long ret = 0;// SNES2ROMaddr_(addr);
     
@@ -81,7 +81,7 @@ unsigned long SNES2ROMaddr(unsigned long addr)
 }
 
 
-bool IsSNESbased(unsigned long addr)
+bool IsSNESbased(unsigned int addr)
 {
     return addr >= 0xC00000;
 }

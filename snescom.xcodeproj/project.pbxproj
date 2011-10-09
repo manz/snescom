@@ -36,6 +36,23 @@
 		B451CBF113A5577B009C9740 /* romaddr.cc in Sources */ = {isa = PBXBuildFile; fileRef = B451CBAD13A554B2009C9740 /* romaddr.cc */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B451CBF613A66850009C9740 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B40C063713A5055B00EFB9C6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B451CBCC13A556A8009C9740;
+			remoteInfo = disasm;
+		};
+		B451CBF813A66851009C9740 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B40C063713A5055B00EFB9C6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B451CBDA13A556AD009C9740;
+			remoteInfo = sneslink;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		B40C063E13A5055B00EFB9C6 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -245,6 +262,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				B451CBF713A66850009C9740 /* PBXTargetDependency */,
+				B451CBF913A66851009C9740 /* PBXTargetDependency */,
 			);
 			name = snescom;
 			productName = snescom;
@@ -290,6 +309,9 @@
 /* Begin PBXProject section */
 		B40C063713A5055B00EFB9C6 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = B40C063A13A5055B00EFB9C6 /* Build configuration list for PBXProject "snescom" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -357,12 +379,27 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		B451CBF713A66850009C9740 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B451CBCC13A556A8009C9740 /* disasm */;
+			targetProxy = B451CBF613A66850009C9740 /* PBXContainerItemProxy */;
+		};
+		B451CBF913A66851009C9740 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B451CBDA13A556AD009C9740 /* sneslink */;
+			targetProxy = B451CBF813A66851009C9740 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		B40C064813A5055C00EFB9C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -390,6 +427,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -400,6 +439,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				"OTHER_CPLUSPLUSFLAGS[arch=*]" = "-DVERSION=\\\"1.7.2.1\\\"";
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -407,8 +447,6 @@
 		B40C064B13A5055C00EFB9C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"HEADER_SEARCH_PATHS[arch=*]" = /sw/include;
-				"LIBRARY_SEARCH_PATHS[arch=*]" = /sw/lib;
 				"OTHER_CPLUSPLUSFLAGS[arch=*]" = "-DVERSION=\\\"1.7.2.1\\\"";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -417,6 +455,7 @@
 		B40C064C13A5055C00EFB9C6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"OTHER_CPLUSPLUSFLAGS[arch=*]" = "$(OTHER_CFLAGS)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -477,6 +516,7 @@
 				B451CBD613A556A8009C9740 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B451CBE213A556AD009C9740 /* Build configuration list for PBXNativeTarget "sneslink" */ = {
 			isa = XCConfigurationList;
@@ -485,6 +525,7 @@
 				B451CBE413A556AD009C9740 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

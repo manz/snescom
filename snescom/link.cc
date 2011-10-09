@@ -16,6 +16,7 @@ bool already_reprocessed = true; /* required by object.cc, not really used */
 bool assembly_errors = false;
 int address_type = 3; /* Set Highrom by default */
 unsigned RomSize = 0;
+char *freespacefile;
 
 namespace
 {
@@ -85,6 +86,9 @@ static void LoadFreespaceSpecs(freespacemap& freespace)
 {
     // Assume everything is free space!
     /* FIXME: Make this configurable. */
+    // add a file mapping ?
+    // something like:
+    // address : size
     for(unsigned page=0xC0; page<=0xFF; ++page)
         freespace.Add(page, 0x0000, GetPageSize());
     
@@ -305,9 +309,11 @@ int main(int argc, char** argv)
             {"output",   0,0,'o'},
             {"outformat", 0,0,'f'},
             {"romsize",  0,0,'s'},
+            {"romtype", 0,0,'t'},
+            {"freespacemap",0,0,'m'},
             {0,0,0,0}
         };
-        int c = getopt_long(argc,argv, "hVo:f:s:", long_options, &option_index);
+        int c = getopt_long(argc,argv, "hVo:f:s:t:m:", long_options, &option_index);
         if(c==-1) break;
         switch(c)
         {
@@ -381,6 +387,13 @@ int main(int argc, char** argv)
                 RomSize = powdsize;
                 break;
             }
+            case 't':
+                address_type = atoi(optarg);
+                break;
+            case 'm':
+                freespacefile = new char[strlen(optarg)];
+                strcpy(freespacefile, optarg);
+                break;
         }
     }
 

@@ -205,12 +205,16 @@ Reprocess:
                 assembly_errors=true;
             }
         }
-    
+
+
+        /* Just do the assembly leave the preprocessing to gpp */
+        AssemblePrecompiled(fp ? fp : stdin, obj);
+#if 0
         if(assemble)
             PrecompileAndAssemble(fp ? fp : stdin, obj);
         else
             Precompile(fp ? fp : stdin, output ? output : stdout);
-        
+#endif        
         if(fp)
             std::fclose(fp);
     }

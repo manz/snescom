@@ -34,17 +34,17 @@ static int HandleIPS()
     for(;;)
     {
         unsigned char Buf[2048];
-        int wanted,c = fread(Buf, 1, 3, stdin);
-        if(c < 0 && ferror(stdin)) { ipserr: perror("fread"); arf: return -1; }
+        size_t wanted,c = fread(Buf, 1, 3, stdin);
+        if((int)c < 0 && ferror(stdin)) { ipserr: perror("fread"); arf: return -1; }
         if(c < (wanted=3)) { ipseof:
-            fprintf(stderr, "Unexpected end of file - wanted %d, got %d\n", wanted, c);
+            fprintf(stderr, "Unexpected end of file - wanted %d, got %d\n", (int)wanted, (int)c);
             goto arf; }
         if(!strncmp((const char *)Buf, "EOF", 3))break;
         unsigned pos = (((unsigned)Buf[0]) << 16)
                       |(((unsigned)Buf[1]) << 8)
                       | ((unsigned)Buf[2]);
         c = fread(Buf, 1, 2, stdin);
-        if(c < 0 && ferror(stdin)) { fprintf(stderr, "Got pos %X\n", pos); goto ipserr; }
+        if((int)c < 0 && ferror(stdin)) { fprintf(stderr, "Got pos %X\n", pos); goto ipserr; }
         if(c < (wanted=2)) { goto ipseof; }
         unsigned len = (((unsigned)Buf[0]) << 8)
                      | ((unsigned)Buf[1]);
@@ -54,7 +54,7 @@ static int HandleIPS()
         {
             rle=true;
             c = fread(Buf, 1, 2, stdin);
-            if(c < 0 && ferror(stdin)) { fprintf(stderr, "Got pos %X\n", pos); goto ipserr; }
+            if((int)c < 0 && ferror(stdin)) { fprintf(stderr, "Got pos %X\n", pos); goto ipserr; }
             if(c < (wanted=2)) { goto ipseof; }
             len = (((unsigned)Buf[0]) << 8)
                  | ((unsigned)Buf[1]);
@@ -64,7 +64,7 @@ static int HandleIPS()
         if(rle)
         {
             c = fread(&Buf2[0], 1, 1, stdin);
-            if(c < 0 && ferror(stdin)) { goto ipserr; }
+            if((int)c < 0 && ferror(stdin)) { goto ipserr; }
             if(c != (wanted=(int)1)) { goto ipseof; }
             for(unsigned c=1; c<len; ++c)
                 Buf2[c] = Buf2[0];
@@ -72,7 +72,7 @@ static int HandleIPS()
         else
         {
             c = fread(&Buf2[0], 1, len, stdin);
-            if(c < 0 && ferror(stdin)) { goto ipserr; }
+            if((int)c < 0 && ferror(stdin)) { goto ipserr; }
             if(c != (wanted=(int)len)) { goto ipseof; }
         }
         

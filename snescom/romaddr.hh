@@ -3,11 +3,11 @@
 
 unsigned char ROM2SNESpage(unsigned char page);
 unsigned char SNES2ROMpage(unsigned char page);
-unsigned long ROM2SNESaddr(unsigned long addr);
-unsigned long SNES2ROMaddr(unsigned long addr);
-unsigned long ROM2SNESaddr(unsigned long addr, int mode);
+unsigned int ROM2SNESaddr(unsigned int addr);
+unsigned int SNES2ROMaddr(unsigned int addr);
+unsigned int ROM2SNESaddr(unsigned int addr, int mode);
 
-bool IsSNESbased(unsigned long addr);
+bool IsSNESbased(unsigned int addr);
 
 /* Returns true if the given ROM is probably a HiROM */
 bool GuessROMtype(const unsigned char* ROM, unsigned ROMsize);

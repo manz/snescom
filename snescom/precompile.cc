@@ -323,6 +323,8 @@ void Precompile(std::FILE *fp, std::FILE *fo)
 
 void PrecompileAndAssemble(std::FILE *fp, Object& obj)
 {
+    
+#if 0
     switch(AsmMethod)
     {
 #if SUPPORT_THREADS
@@ -399,6 +401,7 @@ void PrecompileAndAssemble(std::FILE *fp, Object& obj)
             break;
         }
     }
+#endif
 }
 
 void UseTemps()

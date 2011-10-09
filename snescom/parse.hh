@@ -2,12 +2,12 @@
 #define bqt65asmParseHH
 
 #include <string>
+#include <tr1/memory>
 
 #include "expr.hh"
 #include "assemble.hh"
 #include "tristate"
 
-#include <boost/shared_ptr.hpp>
 
 #undef EOF
 
@@ -36,7 +36,7 @@ public:
 struct ins_parameter
 {
     char prefix;
-    boost::shared_ptr<expression> exp;
+    std::tr1::shared_ptr<expression> exp;
     
     ins_parameter(): prefix(0), exp(/*NULL*/)
     {
