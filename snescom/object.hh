@@ -2,7 +2,7 @@
 #define bqt65asmObjectHH
 
 #include <string>
-
+#include <unistd.h>
 #include "o65linker.hh"
 
 class Object

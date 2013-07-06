@@ -1,6 +1,6 @@
 #ifndef bqt65asmExprHH
 #define bqt65asmExprHH
-
+#include <cstdio>
 #include <string>
 #include <utility>
 #include <list>

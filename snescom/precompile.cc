@@ -23,6 +23,8 @@
 #include <pthread.h>
 #endif
 
+#include <string.h>
+
 #include "precompile.hh"
 #include "assemble.hh"
 

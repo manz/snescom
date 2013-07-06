@@ -1,6 +1,6 @@
 #include <cstdio>
 #include <vector>
-
+#include <string.h>
 using namespace std;
 
 #include "o65linker.hh"

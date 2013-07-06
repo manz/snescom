@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 #include <map>
-
+#include <string.h>
 /* This program disassembles an IPS file. */
 
 using namespace std;

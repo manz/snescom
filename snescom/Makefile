@@ -2,7 +2,8 @@ include Makefile.sets
 
 # Building for Windows (opt/xmingw is for Gentoo):
 #HOST=/opt/xmingw/bin/i386-mingw32msvc-
-HOST=/usr/local/i386-mingw32-4.3.0/bin/i386-mingw32-
+#HOST=/usr/local/i386-mingw32-4.3.0/bin/i386-mingw32-
+#HOST=/usr/bin/
 LDOPTS += -L/sw/lib
 CPPFLAGS += -I/usr/local/i386-mingw32-4.3.0/include -I/sw/include
 
